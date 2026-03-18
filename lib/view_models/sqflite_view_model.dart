@@ -22,7 +22,7 @@ class SqfliteViewModel extends ChangeNotifier {
         .then((value) {
           setLoading(false);
           if (kDebugMode) {
-            print("Data:$data  successfully added");
+            print("Data:$data");
           }
         })
         .onError((error, stack) {
