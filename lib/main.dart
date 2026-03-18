@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sqlite_practice_mvvm/view/data_view.dart';
-import 'package:sqlite_practice_mvvm/view/home_view.dart';
 
 void main() {
   runApp(const MyApp());
