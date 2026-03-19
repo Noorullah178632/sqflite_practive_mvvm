@@ -42,4 +42,27 @@ class SqfliteServices {
           ConflictAlgorithm.replace, //this will replace the data with the id
     );
   }
+
+  //fetch  data : query
+  Future<List<Map<String, dynamic>>> fetchData() async {
+    final db = await database;
+    return await db.query("userData");
+  }
+
+  //update data :
+  Future<int> updateData(Map<String, dynamic> data) async {
+    final db = await database;
+    return await db.update(
+      "userData",
+      data,
+      where: "id =?",
+      whereArgs: [data['id']],
+    ); //"id = ?" : mean we can take any id with it // [data[id]]:mean actual id you wanna delete
+  }
+
+  //delte data :
+  Future<int> deleteData(int id) async {
+    final db = await database;
+    return await db.delete("userData", where: 'id =?', whereArgs: [id]);
+  }
 }

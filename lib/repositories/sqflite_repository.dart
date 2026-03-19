@@ -8,4 +8,21 @@ class SqfliteRepository {
     final userData = data.toMap();
     await _services.addData(userData);
   }
+
+  //Fetch data:
+  Future<List<DataListModel>> fetchData() async {
+    final List<Map<String, dynamic>> mapData = await _services.fetchData();
+    return mapData.map((newTask) => DataListModel.fromMap(newTask)).toList();
+  }
+
+  //update Data :
+  Future<int> updateData(DataListModel data) async {
+    final userData = data.toMap();
+    return await _services.updateData(userData);
+  }
+
+  //delete Data:
+  Future<int> deleteData(int id) async {
+    return await _services.deleteData(id);
+  }
 }
