@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sqlite_practice_mvvm/models/data_list_model.dart';
+import 'package:sqlite_practice_mvvm/view/data_view.dart';
 import 'package:sqlite_practice_mvvm/view_models/sqflite_view_model.dart';
 
 class HomeView extends StatefulWidget {
@@ -43,6 +44,15 @@ class _HomeViewState extends State<HomeView> {
                   );
 
                   await vm.addTask(newTask);
+                  if (context.mounted) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (c) => DataView()),
+                    ).then((va) {
+                      nameController.clear();
+                      descController.clear();
+                    });
+                  }
                 },
                 child: vm.isLoading
                     ? CircularProgressIndicator(color: Colors.blue)
