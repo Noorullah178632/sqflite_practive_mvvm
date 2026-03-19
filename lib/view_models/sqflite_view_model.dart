@@ -59,6 +59,8 @@ class SqfliteViewModel extends ChangeNotifier {
     await _repository
         .updateData(data)
         .then((value) {
+          fetchData();
+          // notifyListeners();
           setLoading(false);
           if (kDebugMode) {
             print("data successfully updated");

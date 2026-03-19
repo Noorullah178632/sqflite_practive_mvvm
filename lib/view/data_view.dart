@@ -33,6 +33,11 @@ class _DataViewState extends State<DataView> {
                 borderOnForeground: true,
                 shadowColor: Colors.blue,
                 child: ListTile(
+                  leading: CircleAvatar(
+                    child: Center(
+                      child: Text(vm.dataList[index].id!.toString()),
+                    ),
+                  ),
                   title: Text(vm.dataList[index].title),
                   subtitle: Text(vm.dataList[index].desc),
                   trailing: Row(
@@ -108,8 +113,10 @@ class _DataViewState extends State<DataView> {
                 desc: desController.text,
               );
 
-              vm.update(updateData);
-              Navigator.pop(context); // Close dialog
+              vm.update(updateData).then((value) {
+                Navigator.pop(context);
+              });
+              // Close dialog
             },
             child: Text("Update"),
           ),
