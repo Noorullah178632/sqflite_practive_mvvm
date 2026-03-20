@@ -13,7 +13,10 @@ class _PractiveViewState extends State<PractiveView> {
     return Scaffold(
       appBar: AppBar(title: Text("Practice work"), centerTitle: true),
       body: Column(
-        children: [Container(color: Colors.blue, child: Text("container 1"))],
+        children: [
+          Container(color: Colors.blue, child: Text("container 1")),
+          Container(color: Colors.blue, child: Text("container 2")),
+        ],
       ),
     );
   }
