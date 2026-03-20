@@ -1,3 +1,5 @@
+import 'dart:nativewrappers/_internal/vm/lib/internal_patch.dart';
+
 import 'package:flutter/material.dart';
 
 class PractiveView extends StatefulWidget {
@@ -10,6 +12,8 @@ class PractiveView extends StatefulWidget {
 class _PractiveViewState extends State<PractiveView> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(title: Text("Practice work"), centerTitle: true),
+    );
   }
 }
