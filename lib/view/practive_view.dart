@@ -1,5 +1,3 @@
-import 'dart:nativewrappers/_internal/vm/lib/internal_patch.dart';
-
 import 'package:flutter/material.dart';
 
 class PractiveView extends StatefulWidget {
@@ -14,6 +12,9 @@ class _PractiveViewState extends State<PractiveView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Practice work"), centerTitle: true),
+      body: Column(
+        children: [Container(color: Colors.blue, child: Text("container 1"))],
+      ),
     );
   }
 }
