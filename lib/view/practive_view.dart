@@ -16,6 +16,7 @@ class _PractiveViewState extends State<PractiveView> {
         children: [
           Container(color: Colors.blue, child: Text("container 1")),
           Container(color: Colors.blue, child: Text("container 2")),
+          Container(color: Colors.blue, child: Text("container 1")),
         ],
       ),
     );
