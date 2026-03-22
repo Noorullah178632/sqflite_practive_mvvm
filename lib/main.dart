@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sqlite_practice_mvvm/view/data_view.dart';
 import 'package:sqlite_practice_mvvm/view/home_view.dart';
 import 'package:sqlite_practice_mvvm/view_models/sqflite_view_model.dart';
 
